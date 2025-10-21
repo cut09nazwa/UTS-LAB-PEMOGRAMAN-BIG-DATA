@@ -13,7 +13,7 @@ def load_models():
     classifier = tf.keras.models.load_model("model/CUT NAZWA HUMAIRA_Laporan 2.h5")  # Model klasifikasi
     return yolo_model, classifier
 
-yolo_model, classifier = load_models()
+yolo_model, classifier = load_models()
 
 # ==========================
 # UI
