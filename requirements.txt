@@ -4,3 +4,6 @@ ultralytics
 pillow
 opencv-python-headless
 numpy
+cv2
+matplotlib.pyplot
+PIL.Image
