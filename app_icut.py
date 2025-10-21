@@ -6,9 +6,9 @@ import numpy as np
 from PIL import Image
 import cv2
 
-# === Load Models ===
 @st.cache_resource
 def load_models():
+    # Pastikan path dan nama file sesuai persis
     yolo_model = YOLO("model/Cut Nazwa Humaira_Laporan 4_best.pt")  # Model deteksi objek
     classifier = tf.keras.models.load_model("model/CUT NAZWA HUMAIRA_Laporan 2.h5")  # Model klasifikasi
     return yolo_model, classifier
