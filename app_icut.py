@@ -5,6 +5,8 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
 import cv2
+from ultralytics import YOLO
+model = YOLO("model/Cut Nazwa Humaira_Laporan 4_best.pt")
 
 # === Load Models ===
 @st.cache_resource
