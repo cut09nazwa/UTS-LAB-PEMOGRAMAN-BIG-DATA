@@ -11,8 +11,17 @@ import cv2
 # ==========================
 @st.cache_resource
 def load_models():
-    yolo_model = YOLO("model/Cut Nazwa Humaira_Laporan 4_best.pt")  # Model deteksi objek
-    classifier = tf.keras.models.load_model("model/CUT NAZWA HUMAIRA_Laporan 2.h5")  # Model klasifikasi
+    yolo_path = "model/Cut Nazwa Humaira_Laporan 4_best.pt"
+    classifier_path = "model/CUT NAZWA HUMAIRA_Laporan 2.h5"
+
+    # Cek keberadaan file sebelum load
+    if not os.path.exists(yolo_path):
+        st.error(f"Model YOLO tidak ditemukan di {yolo_path}")
+    if not os.path.exists(classifier_path):
+        st.error(f"Model classifier tidak ditemukan di {classifier_path}")
+
+    yolo_model = YOLO(yolo_path)
+    classifier = tf.keras.models.load_model(classifier_path)
     return yolo_model, classifier
 
 yolo_model, classifier = load_models()
